@@ -1,372 +1,203 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Carissa Parfum — Your Signature Scent</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CARFUME — parfum aesthetic dengan aroma yang menjadi signature kamu.">
+  <title>CARFUME — Your Signature Scent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <a href="#" class="logo">
-            Carissa<span>.</span>
-        </a>
-
-        <nav class="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#collection">Collection</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <button class="cart-btn" onclick="openCart()">
-            🛍 <span id="cart-count">0</span>
-        </button>
-
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-    </header>
-
-
-    <!-- HERO -->
-    <main>
-
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-                <p class="small-title">ELEVATE YOUR EVERYDAY</p>
-
-                <h1>
-                    Find Your
-                    <span>Signature Scent.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Temukan aroma yang menggambarkan dirimu.
-                    Elegan, feminin, dan dibuat untuk menemani
-                    setiap momen spesialmu.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#collection" class="primary-btn">
-                        Explore Collection →
-                    </a>
-
-                    <a href="#about" class="secondary-btn">
-                        Our Story
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="hero-product">
-
-                <div class="glow"></div>
-
-                <div class="floating-card card-one">
-                    <span>♡</span>
-                    <div>
-                        <strong>Soft & Elegant</strong>
-                        <small>For everyday moments</small>
-                    </div>
-                </div>
-
-                <div class="perfume-display">
-                    <div class="perfume-bottle">
-                        <div class="cap"></div>
-                        <div class="bottle">
-                            <span>CARISSA</span>
-                            <small>PARFUM</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="floating-card card-two">
-                    <span>✦</span>
-                    <div>
-                        <strong>Long Lasting</strong>
-                        <small>Made to stay with you</small>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- BRAND VALUES -->
-        <section class="values">
-
-            <div class="value">
-                <span>✦</span>
-                <div>
-                    <h3>Elegant</h3>
-                    <p>Aroma yang timeless</p>
-                </div>
-            </div>
-
-            <div class="value">
-                <span>♡</span>
-                <div>
-                    <h3>Long Lasting</h3>
-                    <p>Menemani harimu</p>
-                </div>
-            </div>
-
-            <div class="value">
-                <span>❀</span>
-                <div>
-                    <h3>Beautiful</h3>
-                    <p>Dibuat untukmu</p>
-                </div>
-            </div>
-
-        </section>
-
-
-        <!-- COLLECTION -->
-        <section class="collection" id="collection">
-
-            <div class="section-heading">
-                <div>
-                    <p class="small-title">OUR COLLECTION</p>
-                    <h2>Choose Your <span>Signature.</span></h2>
-                </div>
-
-                <p>
-                    Koleksi parfum Carissa dibuat untuk
-                    berbagai mood dan karakter.
-                </p>
-            </div>
-
-
-            <div class="product-grid">
-
-                <!-- PRODUCT 1 -->
-                <article class="product-card">
-
-                    <div class="product-image pink-bg">
-                        <div class="mini-bottle">
-                            <div class="mini-cap"></div>
-                            <div class="mini-glass">
-                                <span>CARISSA</span>
-                            </div>
-                        </div>
-
-                        <span class="tag">BEST SELLER</span>
-                    </div>
-
-                    <div class="product-info">
-                        <p>FLORAL • SWEET</p>
-                        <h3>Rosé Bloom</h3>
-                        <span class="notes">
-                            Rose · Peony · Vanilla
-                        </span>
-
-                        <div class="product-bottom">
-                            <strong>Rp149.000</strong>
-                            <button onclick="addToCart('Rosé Bloom', 149000)">
-                                +
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 2 -->
-                <article class="product-card">
-
-                    <div class="product-image lilac-bg">
-                        <div class="mini-bottle">
-                            <div class="mini-cap"></div>
-                            <div class="mini-glass">
-                                <span>CARISSA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-info">
-                        <p>FRESH • CLEAN</p>
-                        <h3>Lavender Mist</h3>
-                        <span class="notes">
-                            Lavender · Musk · Jasmine
-                        </span>
-
-                        <div class="product-bottom">
-                            <strong>Rp159.000</strong>
-                            <button onclick="addToCart('Lavender Mist', 159000)">
-                                +
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-
-                <!-- PRODUCT 3 -->
-                <article class="product-card">
-
-                    <div class="product-image soft-pink-bg">
-                        <div class="mini-bottle">
-                            <div class="mini-cap"></div>
-                            <div class="mini-glass">
-                                <span>CARISSA</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-info">
-                        <p>WARM • SWEET</p>
-                        <h3>Sweet Peony</h3>
-                        <span class="notes">
-                            Peony · Amber · Vanilla
-                        </span>
-
-                        <div class="product-bottom">
-                            <strong>Rp169.000</strong>
-                            <button onclick="addToCart('Sweet Peony', 169000)">
-                                +
-                            </button>
-                        </div>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-
-            <div class="about-image">
-                <div class="about-circle">
-                    <span>CARISSA</span>
-                    <small>PARFUM</small>
-                </div>
-            </div>
-
-            <div class="about-content">
-
-                <p class="small-title">ABOUT CARISSA</p>
-
-                <h2>
-                    A scent that feels
-                    <span>like you.</span>
-                </h2>
-
-                <p>
-                    Carissa Parfum hadir untuk kamu yang ingin
-                    mengekspresikan karakter melalui aroma.
-                    Kami percaya bahwa parfum bukan sekadar
-                    wewangian, tetapi bagian dari cerita dan
-                    identitas setiap orang.
-                </p>
-
-                <a href="#contact" class="primary-btn">
-                    Discover More →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="cta" id="contact">
-
-            <div>
-                <p class="small-title">YOUR NEXT FAVORITE SCENT</p>
-
-                <h2>
-                    Ready to find
-                    <span>your scent?</span>
-                </h2>
-
-                <p>
-                    Pilih aroma favoritmu dan buat setiap
-                    momen terasa lebih spesial.
-                </p>
-
-                <a href="#collection" class="primary-btn">
-                    Shop Now ♡
-                </a>
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-brand">
-            <a href="#" class="logo">Carissa<span>.</span></a>
-
-            <p>
-                Your scent. Your story.
-            </p>
-        </div>
-
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#collection">Collection</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <p class="copyright">
-            © 2026 Carissa Parfum. All rights reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- CART MODAL -->
-    <div class="cart-modal" id="cart-modal">
-
-        <div class="cart-box">
-
-            <button class="close-cart" onclick="closeCart()">×</button>
-
-            <p class="small-title">YOUR BAG</p>
-            <h2>Your <span>Cart.</span></h2>
-
-            <div id="cart-items">
-                <p class="empty-cart">
-                    Keranjang masih kosong ♡
-                </p>
-            </div>
-
-            <div class="cart-total">
-                <span>Total</span>
-                <strong id="cart-total">Rp0</strong>
-            </div>
-
-            <button class="checkout-btn" onclick="checkout()">
-                Checkout →
-            </button>
-
-        </div>
-
+  <div class="announcement">✨ CARFUME • Kalideres, Jakarta Barat • Order via WhatsApp</div>
+
+  <header class="header">
+    <a class="logo" href="#home">car<span>fume</span><b>.</b></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <div class="actions">
+      <button id="searchBtn" aria-label="Cari">⌕</button>
+      <button id="cartBtn" aria-label="Keranjang">♡<i id="cartCount">0</i></button>
+      <button id="menuBtn" class="menu-btn" aria-label="Menu">☰</button>
     </div>
+  </header>
 
+  <div class="searchbar" id="searchbar">
+    <input id="searchInput" type="search" placeholder="Cari parfum...">
+    <button id="clearSearch">×</button>
+  </div>
 
-    <script src="script.js"></script>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#reviews">Reviews</a>
+  </nav>
 
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">CARFUME • YOUR DAILY SIGNATURE</p>
+        <h1>Smell good.<br><em>Feel like you.</em></h1>
+        <p class="lead">Parfum aesthetic untuk melengkapi mood, outfit, dan momen kamu. Pilih aroma favoritmu dan jadikan setiap hari terasa lebih special.</p>
+        <div class="hero-buttons">
+          <a class="btn dark" href="#shop">Shop collection <span>→</span></a>
+          <a class="under" href="#about">Our story</a>
+        </div>
+        <div class="stats">
+          <div><strong>10+</strong><small>signature scents</small></div>
+          <div><strong>4.9/5</strong><small>customer rating</small></div>
+          <div><strong>Jakarta</strong><small>West area</small></div>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-backdrop"></div>
+        <img src="https://images.pexels.com/photos/36833967/pexels-photo-36833967.jpeg?auto=compress&cs=tinysrgb&w=1200"
+             alt="Botol parfum asli dengan latar putih"
+             loading="eager">
+        <div class="photo-label"><b>real product photography</b><small>clean • elegant • everyday</small></div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><b>✦ Long lasting</b><small>Aroma nyaman untuk menemani aktivitas</small></div>
+      <div><b>♡ Aesthetic bottle</b><small>Simple dan cocok jadi koleksi</small></div>
+      <div><b>✿ Easy to love</b><small>Pilihan aroma untuk berbagai mood</small></div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="heading">
+        <div><p class="eyebrow">SHOP THE EDIT</p><h2>Find your <em>signature.</em></h2></div>
+        <p>Koleksi parfum Carfume dengan visual foto produk nyata, bukan ilustrasi.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="floral">Floral</button>
+          <button class="filter" data-filter="sweet">Sweet</button>
+          <button class="filter" data-filter="fresh">Fresh</button>
+          <button class="filter" data-filter="woody">Woody</button>
+        </div>
+        <select id="sort">
+          <option value="featured">Featured</option>
+          <option value="low">Harga terendah</option>
+          <option value="high">Harga tertinggi</option>
+        </select>
+      </div>
+
+      <div class="products" id="products">
+        <article class="product" data-category="floral sweet" data-price="149000" data-name="rose cloud">
+          <div class="product-photo">
+            <img src="https://images.pexels.com/photos/19251919/pexels-photo-19251919.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Rose Cloud" loading="lazy">
+            <span>BEST SELLER</span>
+            <button class="quick" data-name="Rose Cloud">Quick view</button>
+          </div>
+          <div class="info"><p>FLORAL • SWEET</p><h3>Rose Cloud</h3><small>Rose · Peony · Vanilla</small>
+            <div><strong>Rp149.000</strong><button class="add" data-name="Rose Cloud" data-price="149000">+</button></div>
+          </div>
+        </article>
+
+        <article class="product" data-category="floral fresh" data-price="159000" data-name="lavender muse">
+          <div class="product-photo">
+            <img src="https://images.pexels.com/photos/8166624/pexels-photo-8166624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Lavender Muse" loading="lazy">
+            <span>NEW</span>
+            <button class="quick" data-name="Lavender Muse">Quick view</button>
+          </div>
+          <div class="info"><p>FRESH • FLORAL</p><h3>Lavender Muse</h3><small>Lavender · Jasmine · Musk</small>
+            <div><strong>Rp159.000</strong><button class="add" data-name="Lavender Muse" data-price="159000">+</button></div>
+          </div>
+        </article>
+
+        <article class="product" data-category="sweet" data-price="169000" data-name="vanilla kiss">
+          <div class="product-photo">
+            <img src="https://images.pexels.com/photos/17941998/pexels-photo-17941998.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Vanilla Kiss" loading="lazy">
+            <button class="quick" data-name="Vanilla Kiss">Quick view</button>
+          </div>
+          <div class="info"><p>SWEET • WARM</p><h3>Vanilla Kiss</h3><small>Vanilla · Amber · Tonka</small>
+            <div><strong>Rp169.000</strong><button class="add" data-name="Vanilla Kiss" data-price="169000">+</button></div>
+          </div>
+        </article>
+
+        <article class="product" data-category="fresh woody" data-price="179000" data-name="muse noir">
+          <div class="product-photo">
+            <img src="https://images.pexels.com/photos/36833975/pexels-photo-36833975.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum dengan aksen pink Muse Noir" loading="lazy">
+            <button class="quick" data-name="Muse Noir">Quick view</button>
+          </div>
+          <div class="info"><p>WOODY • CLEAN</p><h3>Muse Noir</h3><small>Sandalwood · Musk · Bergamot</small>
+            <div><strong>Rp179.000</strong><button class="add" data-name="Muse Noir" data-price="179000">+</button></div>
+          </div>
+        </article>
+      </div>
+      <p id="noResult" class="no-result">Parfum yang kamu cari belum ditemukan ♡</p>
+      <p class="photo-credit">Visual produk: real product photography dengan nuansa soft pastel. Untuk katalog jualan, ganti dengan foto parfum Carfume milikmu sendiri jika sudah tersedia.</p>
+    </section>
+
+    <section class="story" id="about">
+      <div class="story-photo">
+        <img src="https://images.pexels.com/photos/8166624/pexels-photo-8166624.jpeg?auto=compress&cs=tinysrgb&w=1200"
+             alt="Foto nyata parfum pink aesthetic"
+             loading="lazy">
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">ABOUT CARFUME</p>
+        <h2>More than a perfume,<br><em>it's your mood.</em></h2>
+        <p>Carfume hadir untuk menemani cerita kecil sehari-hari. Dari aktivitas harian sampai momen spesial, kami ingin menghadirkan aroma yang terasa personal, aesthetic, dan mudah dicintai.</p>
+        <div class="points">
+          <div><b>01</b><span>Simple scents that feel personal</span></div>
+          <div><b>02</b><span>Packaging aesthetic & giftable</span></div>
+          <div><b>03</b><span>Berbasis di Kalideres, Jakarta Barat</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <div class="heading centered"><p class="eyebrow">LOVE NOTES</p><h2>What they <em>say.</em></h2></div>
+      <div class="review-grid">
+        <blockquote><b>★★★★★</b><p>“Packaging-nya gemes banget dan wanginya soft. Rose Cloud jadi parfum yang paling sering aku pakai.”</p><small>— Naya, Jakarta</small></blockquote>
+        <blockquote><b>★★★★★</b><p>“Lavender Muse wanginya clean banget, cocok dipakai daily. Bakal repeat order!”</p><small>— Aurel, Jakarta Barat</small></blockquote>
+        <blockquote><b>★★★★★</b><p>“Desainnya minimalis tapi tetap feminine. Buat hadiah juga cakep.”</p><small>— Salsya, Tangerang</small></blockquote>
+      </div>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">YOUR NEXT FAVORITE SCENT</p>
+      <h2>Ready to smell<br><em>like you?</em></h2>
+      <p>Pilih aroma favoritmu lalu chat Carfume untuk order.</p>
+      <a class="btn dark" href="https://wa.me/6285150933867?text=halo%20kakak%20aku%20mau%20pesen%20dong....." target="_blank" rel="noopener">Chat & order on WhatsApp →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div><a class="logo" href="#home">car<span>fume</span><b>.</b></a><p>Your scent. Your story.</p></div>
+    <div><b>Visit / Order</b><p>Kalideres, Jakarta Barat</p></div>
+    <div class="links"><a href="https://wa.me/6285150933867" target="_blank" rel="noopener">WhatsApp</a><a href="#shop">Shop</a><a href="#about">About</a></div>
+    <small>© 2026 Carfume. All rights reserved.</small>
+  </footer>
+
+  <aside class="cart" id="cart">
+    <div class="cart-head"><div><p class="eyebrow">YOUR BAG</p><h3>My favorites</h3></div><button id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-foot"><div><span>Total</span><b id="total">Rp0</b></div><button id="checkout" class="btn dark full">Checkout via WhatsApp →</button></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <button id="closeModal">×</button>
+      <img id="modalImg" alt="">
+      <div><p class="eyebrow">CARFUME EDIT</p><h3 id="modalName"></h3><p id="modalNotes"></p><strong id="modalPrice"></strong><button id="modalAdd" class="btn dark full">Add to bag ♡</button></div>
+    </div>
+  </div>
+
+  <a class="wa" href="https://wa.me/6285150933867?text=halo%20kakak%20aku%20mau%20pesen%20dong....." target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <span>✆</span><b>Chat us</b>
+  </a>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
 </body>
 </html>
-```
