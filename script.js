@@ -55,3 +55,121 @@ $("#checkout").onclick=()=>{
  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
 };
 render();
+
+/* ==============================
+   CARFUME AUTO-SCROLL
+   - Mulai 2 detik setelah aktivitas terakhir
+   - Scroll perlahan ke bawah saat idle
+   - Aktivitas user menghentikan auto-scroll
+   - Sampai bawah -> lompat cepat ke atas -> lanjut lagi
+   ============================== */
+(function setupAutoScroll(){
+  const IDLE_MS = 2000;
+  const STEP_PX = 0.7;       // kecepatan scroll per frame
+  const TOP_RESTART_DELAY = 250;
+  const BOTTOM_TOLERANCE = 2;
+
+  let idleTimer = null;
+  let rafId = null;
+  let restartTimer = null;
+  let running = false;
+  let internalScroll = false;
+  let lastUserActivity = Date.now();
+
+  const getMaxScroll = () => Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+
+  function stop(){
+    running = false;
+    if (rafId !== null){
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  function schedule(){
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+      if (!document.hidden && Date.now() - lastUserActivity >= IDLE_MS){
+        start();
+      }
+    }, IDLE_MS);
+  }
+
+  function start(){
+    if (running || document.hidden || getMaxScroll() <= 0) return;
+    running = true;
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function tick(){
+    if (!running) return;
+    if (document.hidden){ stop(); return; }
+
+    // Kalau user beraktivitas dalam 2 detik terakhir, jangan bergerak.
+    if (Date.now() - lastUserActivity < IDLE_MS){
+      stop();
+      schedule();
+      return;
+    }
+
+    const max = getMaxScroll();
+    const current = window.scrollY || window.pageYOffset || 0;
+
+    if (current >= max - BOTTOM_TOLERANCE){
+      // Lompat cepat ke atas, lalu mulai lagi setelah sedikit jeda.
+      stop();
+      internalScroll = true;
+      window.scrollTo({top: 0, left: 0, behavior: 'auto'});
+      setTimeout(() => { internalScroll = false; start(); }, TOP_RESTART_DELAY);
+      return;
+    }
+
+    // Pakai scrollTo + behavior:auto agar CSS scroll-behavior:smooth
+    // tidak membuat animasi saling menumpuk.
+    internalScroll = true;
+    window.scrollTo({
+      top: Math.min(current + STEP_PX, max),
+      left: 0,
+      behavior: 'auto'
+    });
+    internalScroll = false;
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function userActivity(){
+    if (internalScroll) return;
+    lastUserActivity = Date.now();
+    stop();
+    schedule();
+  }
+
+  // Aktivitas utama user.
+  ['wheel','touchstart','touchmove','pointerdown','pointerup','keydown','click','input'].forEach(type => {
+    window.addEventListener(type, userActivity, {passive: true});
+  });
+
+  // Scroll manual dari scrollbar / gesture tetap dianggap aktivitas,
+  // sedangkan scroll yang dibuat kode sendiri diabaikan.
+  window.addEventListener('scroll', () => {
+    if (!internalScroll) userActivity();
+  }, {passive: true});
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden){
+      stop();
+      clearTimeout(idleTimer);
+    } else {
+      lastUserActivity = Date.now();
+      schedule();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (getMaxScroll() <= 0) stop();
+  }, {passive: true});
+
+  // Hitung 2 detik idle pertama setelah halaman siap.
+  lastUserActivity = Date.now();
+  schedule();
+})();
