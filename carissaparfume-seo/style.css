@@ -16,6 +16,7 @@
 html{scroll-behavior:smooth}
 body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;line-height:1.5}
 a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
 button,input,select{font:inherit}
 button{cursor:pointer;border:0}
 
@@ -139,7 +140,7 @@ nav a:hover{color:var(--lilac2)}
   box-shadow:0 14px 40px rgba(60,40,70,.12);
 }
 .photo-label b,.photo-label small{display:block}
-.photo-label b{font-size:11px;color:var(--ink)}
+.photo-label b{font-size:11px;font-weight:700;color:#2a2430}
 .photo-label small{font-size:9px;color:var(--muted);margin-top:3px}
 
 /* Benefits */
@@ -150,7 +151,7 @@ nav a:hover{color:var(--lilac2)}
 .benefits>div{text-align:center;padding:14px 10px;border-right:1px solid var(--line)}
 .benefits>div:last-child{border:0}
 .benefits b,.benefits small{display:block}
-.benefits b{font-size:13px;color:var(--ink);font-weight:600}
+.benefits b{font-size:13px;color:#2a2430;font-weight:700}
 .benefits small{font-size:11px;color:var(--muted);margin-top:5px}
 
 /* Section */
@@ -164,8 +165,8 @@ nav a:hover{color:var(--lilac2)}
 .toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;gap:16px;flex-wrap:wrap}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter{
-  padding:10px 16px;border:1.5px solid var(--line);background:#fff;
-  border-radius:50px;font-size:12px;font-weight:500;color:var(--muted);
+  padding:10px 16px;border:1.5px solid #c8c0c8;background:#fff;
+  border-radius:50px;font-size:12px;font-weight:600;color:#3d3642;
   transition:all .2s;
 }
 .filter:hover{border-color:var(--lilac2);color:var(--lilac2)}
@@ -175,10 +176,10 @@ nav a:hover{color:var(--lilac2)}
 
 /* Select with label */
 .sort-wrap{display:flex;align-items:center;gap:10px}
-.sort-wrap label{font-size:12px;font-weight:500;color:var(--muted);white-space:nowrap}
+.sort-wrap label{font-size:12px;font-weight:600;color:#3d3642;white-space:nowrap}
 select#sort{
-  border:1.5px solid var(--line);border-radius:50px;padding:10px 16px;
-  font-size:12px;color:var(--ink);outline:0;background:#fff;
+  border:1.5px solid #c8c0c8;border-radius:50px;padding:10px 16px;
+  font-size:12px;font-weight:500;color:#2a2430;outline:0;background:#fff;
   min-width:140px;cursor:pointer;
 }
 select#sort:focus{border-color:var(--lilac2)}
@@ -212,7 +213,7 @@ select#sort:focus{border-color:var(--lilac2)}
 }
 .product:hover .quick{opacity:1;transform:translateX(-50%) translateY(0)}
 .info{padding:16px 14px 18px}
-.info>p{font-size:10px;font-weight:600;letter-spacing:1px;color:var(--lilac2);margin-bottom:4px}
+.info>p{font-size:10px;font-weight:700;letter-spacing:1px;color:#5a3d7a;margin-bottom:4px}
 .info h3{font:600 17px "Playfair Display",serif;color:var(--ink);margin-bottom:4px}
 .info small{font-size:12px;color:var(--muted);display:block;margin-bottom:12px}
 .info>div{display:flex;justify-content:space-between;align-items:center}
@@ -223,6 +224,7 @@ select#sort:focus{border-color:var(--lilac2)}
 }
 .info .add:hover{background:var(--lilac2)}
 
+.hidden{display:none!important}
 .no-result{text-align:center;padding:40px;color:var(--muted);display:none}
 .photo-credit{font-size:11px;color:var(--muted-light);margin-top:28px;text-align:center}
 

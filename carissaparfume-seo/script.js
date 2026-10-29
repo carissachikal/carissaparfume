@@ -1,10 +1,10 @@
 const WA="6285150933867";
 const WA_BASE="halo kakak aku mau pesen dong.....";
 const data={
- "Rose Cloud":{price:149000,notes:"Rose · Peony · Vanilla",img:"https://images.pexels.com/photos/15271715/pexels-photo-15271715.jpeg?auto=compress&cs=tinysrgb&w=900"},
- "Lavender Muse":{price:159000,notes:"Lavender · Jasmine · Musk",img:"https://images.pexels.com/photos/19644207/pexels-photo-19644207.jpeg?auto=compress&cs=tinysrgb&w=900"},
- "Vanilla Kiss":{price:169000,notes:"Vanilla · Amber · Tonka",img:"https://images.pexels.com/photos/9957576/pexels-photo-9957576.jpeg?auto=compress&cs=tinysrgb&w=900"},
- "Muse Noir":{price:179000,notes:"Sandalwood · Musk · Bergamot",img:"https://images.pexels.com/photos/4938275/pexels-photo-4938275.jpeg?auto=compress&cs=tinysrgb&w=900"}
+ "Rose Cloud":{price:149000,notes:"Rose · Peony · Vanilla",img:"images/rose-cloud.jpg"},
+ "Lavender Muse":{price:159000,notes:"Lavender · Jasmine · Musk",img:"images/lavender-muse.jpg"},
+ "Vanilla Kiss":{price:169000,notes:"Vanilla · Amber · Tonka",img:"images/vanilla-kiss.jpg"},
+ "Muse Noir":{price:179000,notes:"Sandalwood · Musk · Bergamot",img:"images/muse-noir.jpg"}
 };
 let cart=JSON.parse(localStorage.getItem("carfumeCart")||"[]");
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
