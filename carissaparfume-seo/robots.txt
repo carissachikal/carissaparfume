@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://carfume.my.id/sitemap.xml
