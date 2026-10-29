@@ -1,0 +1,17 @@
+{
+  "name": "CARFUME — Your Signature Scent",
+  "short_name": "CARFUME",
+  "description": "Parfum aesthetic dengan aroma signature yang melengkapi mood, outfit, dan momen kamu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eadcff",
+  "theme_color": "#eadcff",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

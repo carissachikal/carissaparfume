@@ -1,0 +1,44 @@
+========================================
+CARA UPLOAD KE GITHUB (WAJIB DIBACA)
+========================================
+
+1. Buka: https://github.com/carissachikal/carissaparfume
+
+2. Hapus dulu file lama yang bentrok (opsional tapi lebih bersih):
+   - index.html
+   - style.css
+   - script.js
+
+3. Klik tombol hijau "Add file" → "Upload files"
+
+4. Drag SEMUA file dari folder ini ke area upload:
+   - index.html
+   - style.css
+   - script.js
+   - favicon.svg
+   - og-image.jpg
+   - robots.txt
+   - sitemap.xml
+   - site.webmanifest
+   - CNAME
+   - BACA-DULU.txt (boleh tidak di-upload)
+   - README.md
+   - SEO-GUIDE.md
+   - FOLDER "images" (beserta 6 file jpg di dalamnya)
+
+5. Scroll ke bawah → ketik pesan commit: "update SEO performance accessibility"
+   → klik "Commit changes"
+
+6. Tunggu 2-3 menit.
+
+7. CEK SUKSES:
+   Buka https://carfume.my.id/images/hero.jpg
+   → HARUS muncul gambar botol parfum
+   → Kalau 404 = folder images belum ter-upload
+
+8. Baru jalankan PageSpeed lagi.
+
+CATATAN:
+- Jangan upload file ZIP-nya ke GitHub.
+- Extract dulu, lalu upload isinya.
+- Folder "images" WAJIB ikut ter-upload.
