@@ -112,8 +112,9 @@
   </header>
 
   <div class="searchbar" id="searchbar">
-    <input id="searchInput" type="search" placeholder="Cari parfum...">
-    <button id="clearSearch">×</button>
+    <label for="searchInput" class="sr-only">Cari parfum</label>
+    <input id="searchInput" type="search" placeholder="Cari parfum..." aria-label="Cari parfum">
+    <button id="clearSearch" aria-label="Hapus pencarian">×</button>
   </div>
 
   <nav class="mobile-nav" id="mobileNav">
@@ -159,18 +160,21 @@
       </div>
 
       <div class="toolbar">
-        <div class="filters">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="floral">Floral</button>
-          <button class="filter" data-filter="sweet">Sweet</button>
-          <button class="filter" data-filter="fresh">Fresh</button>
-          <button class="filter" data-filter="woody">Woody</button>
+        <div class="filters" role="group" aria-label="Filter kategori parfum">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="floral" type="button">Floral</button>
+          <button class="filter" data-filter="sweet" type="button">Sweet</button>
+          <button class="filter" data-filter="fresh" type="button">Fresh</button>
+          <button class="filter" data-filter="woody" type="button">Woody</button>
         </div>
-        <select id="sort">
-          <option value="featured">Featured</option>
-          <option value="low">Harga terendah</option>
-          <option value="high">Harga tertinggi</option>
-        </select>
+        <div class="sort-wrap">
+          <label for="sort">Urutkan</label>
+          <select id="sort" name="sort" aria-label="Urutkan produk">
+            <option value="featured">Featured</option>
+            <option value="low">Harga terendah</option>
+            <option value="high">Harga tertinggi</option>
+          </select>
+        </div>
       </div>
 
       <div class="products" id="products">
@@ -178,10 +182,10 @@
           <div class="product-photo">
             <img src="https://images.pexels.com/photos/19251919/pexels-photo-19251919.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Rose Cloud" loading="lazy">
             <span>BEST SELLER</span>
-            <button class="quick" data-name="Rose Cloud">Quick view</button>
+            <button class="quick" data-name="Rose Cloud" type="button" aria-label="Lihat detail Rose Cloud">Quick view</button>
           </div>
           <div class="info"><p>FLORAL • SWEET</p><h3>Rose Cloud</h3><small>Rose · Peony · Vanilla</small>
-            <div><strong>Rp149.000</strong><button class="add" data-name="Rose Cloud" data-price="149000">+</button></div>
+            <div><strong>Rp149.000</strong><button class="add" data-name="Rose Cloud" data-price="149000" aria-label="Tambah Rose Cloud ke keranjang">+</button></div>
           </div>
         </article>
 
@@ -189,30 +193,30 @@
           <div class="product-photo">
             <img src="https://images.pexels.com/photos/8166624/pexels-photo-8166624.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Lavender Muse" loading="lazy">
             <span>NEW</span>
-            <button class="quick" data-name="Lavender Muse">Quick view</button>
+            <button class="quick" data-name="Lavender Muse" type="button" aria-label="Lihat detail Lavender Muse">Quick view</button>
           </div>
           <div class="info"><p>FRESH • FLORAL</p><h3>Lavender Muse</h3><small>Lavender · Jasmine · Musk</small>
-            <div><strong>Rp159.000</strong><button class="add" data-name="Lavender Muse" data-price="159000">+</button></div>
+            <div><strong>Rp159.000</strong><button class="add" data-name="Lavender Muse" data-price="159000" aria-label="Tambah Lavender Muse ke keranjang">+</button></div>
           </div>
         </article>
 
         <article class="product" data-category="sweet" data-price="169000" data-name="vanilla kiss">
           <div class="product-photo">
             <img src="https://images.pexels.com/photos/17941998/pexels-photo-17941998.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum pink Vanilla Kiss" loading="lazy">
-            <button class="quick" data-name="Vanilla Kiss">Quick view</button>
+            <button class="quick" data-name="Vanilla Kiss" type="button" aria-label="Lihat detail Vanilla Kiss">Quick view</button>
           </div>
           <div class="info"><p>SWEET • WARM</p><h3>Vanilla Kiss</h3><small>Vanilla · Amber · Tonka</small>
-            <div><strong>Rp169.000</strong><button class="add" data-name="Vanilla Kiss" data-price="169000">+</button></div>
+            <div><strong>Rp169.000</strong><button class="add" data-name="Vanilla Kiss" data-price="169000" aria-label="Tambah Vanilla Kiss ke keranjang">+</button></div>
           </div>
         </article>
 
         <article class="product" data-category="fresh woody" data-price="179000" data-name="muse noir">
           <div class="product-photo">
             <img src="https://images.pexels.com/photos/36833975/pexels-photo-36833975.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Foto asli botol parfum dengan aksen pink Muse Noir" loading="lazy">
-            <button class="quick" data-name="Muse Noir">Quick view</button>
+            <button class="quick" data-name="Muse Noir" type="button" aria-label="Lihat detail Muse Noir">Quick view</button>
           </div>
           <div class="info"><p>WOODY • CLEAN</p><h3>Muse Noir</h3><small>Sandalwood · Musk · Bergamot</small>
-            <div><strong>Rp179.000</strong><button class="add" data-name="Muse Noir" data-price="179000">+</button></div>
+            <div><strong>Rp179.000</strong><button class="add" data-name="Muse Noir" data-price="179000" aria-label="Tambah Muse Noir ke keranjang">+</button></div>
           </div>
         </article>
       </div>
@@ -263,17 +267,17 @@
   </footer>
 
   <aside class="cart" id="cart">
-    <div class="cart-head"><div><p class="eyebrow">YOUR BAG</p><h3>My favorites</h3></div><button id="closeCart">×</button></div>
+    <div class="cart-head"><div><p class="eyebrow">YOUR BAG</p><h3>My favorites</h3></div><button id="closeCart" aria-label="Tutup keranjang">×</button></div>
     <div id="cartItems" class="cart-items"></div>
-    <div class="cart-foot"><div><span>Total</span><b id="total">Rp0</b></div><button id="checkout" class="btn dark full">Checkout via WhatsApp →</button></div>
+    <div class="cart-foot"><div><span>Total</span><b id="total">Rp0</b></div><button id="checkout" class="btn dark full" type="button">Checkout via WhatsApp →</button></div>
   </aside>
   <div class="overlay" id="overlay"></div>
 
   <div class="modal" id="modal">
     <div class="modal-box">
-      <button id="closeModal">×</button>
+      <button id="closeModal" aria-label="Tutup detail produk">×</button>
       <img id="modalImg" alt="">
-      <div><p class="eyebrow">CARFUME EDIT</p><h3 id="modalName"></h3><p id="modalNotes"></p><strong id="modalPrice"></strong><button id="modalAdd" class="btn dark full">Add to bag ♡</button></div>
+      <div><p class="eyebrow">CARFUME EDIT</p><h3 id="modalName"></h3><p id="modalNotes"></p><strong id="modalPrice"></strong><button id="modalAdd" class="btn dark full" type="button">Add to bag ♡</button></div>
     </div>
   </div>
 
