@@ -1,10 +1,10 @@
 const WA="6285150933867";
 const WA_BASE="halo kakak aku mau pesen dong.....";
 const data={
- "Rose Cloud":{price:149000,notes:"Rose · Peony · Vanilla",img:"images/rose-cloud.jpg"},
- "Lavender Muse":{price:159000,notes:"Lavender · Jasmine · Musk",img:"images/lavender-muse.jpg"},
- "Vanilla Kiss":{price:169000,notes:"Vanilla · Amber · Tonka",img:"images/vanilla-kiss.jpg"},
- "Muse Noir":{price:179000,notes:"Sandalwood · Musk · Bergamot",img:"images/muse-noir.jpg"}
+ "Rose Cloud":{price:149000,notes:"Rose · Peony · Vanilla",img:"images/rose-cloud.webp"},
+ "Lavender Muse":{price:159000,notes:"Lavender · Jasmine · Musk",img:"images/lavender-muse.webp"},
+ "Vanilla Kiss":{price:169000,notes:"Vanilla · Amber · Tonka",img:"images/vanilla-kiss.webp"},
+ "Muse Noir":{price:179000,notes:"Sandalwood · Musk · Bergamot",img:"images/muse-noir.webp"}
 };
 let cart=JSON.parse(localStorage.getItem("carfumeCart")||"[]");
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];

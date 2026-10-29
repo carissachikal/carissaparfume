@@ -16,7 +16,8 @@
 html{scroll-behavior:smooth}
 body{font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;line-height:1.5}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto;display:block}
+img,picture{max-width:100%;height:auto;display:block}
+picture img{width:100%;height:100%;object-fit:cover}
 button,input,select{font:inherit}
 button{cursor:pointer;border:0}
 
@@ -197,9 +198,13 @@ select#sort:focus{border-color:var(--lilac2)}
 .product-photo{
   position:relative;height:300px;overflow:hidden;background:#f8f2f6;
 }
+.product-photo img,.product-photo picture{
+  width:100%;height:100%;
+}
 .product-photo img{
   width:100%;height:100%;object-fit:cover;transition:transform .4s;
 }
+.product-photo picture{display:block;height:100%}
 .product:hover .product-photo img{transform:scale(1.05)}
 .product-photo span{
   position:absolute;top:12px;left:12px;background:var(--ink);color:#fff;

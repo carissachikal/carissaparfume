@@ -50,8 +50,29 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="images/hero.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="style.css"></noscript>
+  <style>
+    /* Critical CSS - above the fold */
+    :root{--lilac2:#6b4f96;--ink:#2a2430;--pinksoft:#fff0f6;--line:#e8e0e8}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+    .announcement{height:36px;background:var(--ink);color:#fff;text-align:center;font-size:11px;padding:10px;font-weight:500}
+    .header{height:78px;padding:0 6.5%;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line)}
+    .logo{font:700 28px Georgia,serif;letter-spacing:-1px}.logo span{color:var(--lilac2);font-style:italic}.logo b{color:#d48aaa}
+    nav{display:flex;gap:32px;font-size:13px;font-weight:600;color:#3d3642}
+    .hero{min-height:70vh;padding:50px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px}
+    .hero h1{font:600 clamp(42px,6vw,80px)/.96 Georgia,serif;letter-spacing:-3px;margin-bottom:18px}
+    .hero h1 em{color:var(--lilac2);font-style:italic}
+    .lead{color:#3d3642;font-size:15px;line-height:1.7;margin-bottom:24px;max-width:480px}
+    .btn{display:inline-flex;padding:14px 24px;border-radius:50px;font-size:12px;font-weight:700}
+    .dark{background:var(--ink);color:#fff}
+    .hero-photo{display:grid;place-items:center;min-height:360px}
+    .hero-photo img,.hero-photo picture{max-width:70%;height:auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    @media(max-width:720px){.hero{grid-template-columns:1fr;padding:40px 5%}nav{display:none}.menu-btn{display:block}}
+  </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -124,12 +145,10 @@
 
       <div class="hero-photo">
         <div class="photo-backdrop" aria-hidden="true"></div>
-        <img src="images/hero.jpg"
-             alt="Botol parfum Carfume aesthetic dengan latar lembut"
-             width="560" height="840"
-             fetchpriority="high"
-             loading="eager"
-             decoding="async">
+        <picture>
+          <source srcset="images/hero.webp" type="image/webp">
+          <img src="images/hero.jpg" alt="Botol parfum Carfume aesthetic dengan latar lembut" width="560" height="840" fetchpriority="high" loading="eager" decoding="async">
+        </picture>
         <div class="photo-label"><b>real product photography</b><small>clean • elegant • everyday</small></div>
       </div>
     </section>
@@ -170,7 +189,7 @@
       <div class="products" id="products">
         <article class="product" data-category="floral sweet" data-price="149000" data-name="rose cloud">
           <div class="product-photo">
-            <img src="images/rose-cloud.jpg" alt="Botol parfum Rose Cloud — floral sweet" width="420" height="630" loading="lazy" decoding="async">
+            <picture><source srcset="images/rose-cloud.webp" type="image/webp"><img src="images/rose-cloud.jpg" alt="Botol parfum Rose Cloud — floral sweet" width="420" height="630" loading="lazy" decoding="async"></picture>
             <span>BEST SELLER</span>
             <button class="quick" data-name="Rose Cloud" type="button" aria-label="Lihat detail Rose Cloud">Quick view</button>
           </div>
@@ -187,7 +206,7 @@
 
         <article class="product" data-category="floral fresh" data-price="159000" data-name="lavender muse">
           <div class="product-photo">
-            <img src="images/lavender-muse.jpg" alt="Botol parfum Lavender Muse — fresh floral" width="420" height="525" loading="lazy" decoding="async">
+            <picture><source srcset="images/lavender-muse.webp" type="image/webp"><img src="images/lavender-muse.jpg" alt="Botol parfum Lavender Muse — fresh floral" width="420" height="525" loading="lazy" decoding="async"></picture>
             <span>NEW</span>
             <button class="quick" data-name="Lavender Muse" type="button" aria-label="Lihat detail Lavender Muse">Quick view</button>
           </div>
@@ -204,7 +223,7 @@
 
         <article class="product" data-category="sweet" data-price="169000" data-name="vanilla kiss">
           <div class="product-photo">
-            <img src="images/vanilla-kiss.jpg" alt="Botol parfum Vanilla Kiss — sweet warm" width="380" height="676" loading="lazy" decoding="async">
+            <picture><source srcset="images/vanilla-kiss.webp" type="image/webp"><img src="images/vanilla-kiss.jpg" alt="Botol parfum Vanilla Kiss — sweet warm" width="380" height="676" loading="lazy" decoding="async"></picture>
             <button class="quick" data-name="Vanilla Kiss" type="button" aria-label="Lihat detail Vanilla Kiss">Quick view</button>
           </div>
           <div class="info">
@@ -220,7 +239,7 @@
 
         <article class="product" data-category="fresh woody" data-price="179000" data-name="muse noir">
           <div class="product-photo">
-            <img src="images/muse-noir.jpg" alt="Botol parfum Muse Noir — woody clean" width="420" height="630" loading="lazy" decoding="async">
+            <picture><source srcset="images/muse-noir.webp" type="image/webp"><img src="images/muse-noir.jpg" alt="Botol parfum Muse Noir — woody clean" width="420" height="630" loading="lazy" decoding="async"></picture>
             <button class="quick" data-name="Muse Noir" type="button" aria-label="Lihat detail Muse Noir">Quick view</button>
           </div>
           <div class="info">
@@ -239,7 +258,7 @@
 
     <section class="story" id="about">
       <div class="story-photo">
-        <img src="images/story.jpg" alt="Koleksi parfum Carfume aesthetic" width="420" height="525" loading="lazy" decoding="async">
+        <picture><source srcset="images/story.webp" type="image/webp"><img src="images/story.jpg" alt="Koleksi parfum Carfume aesthetic" width="420" height="525" loading="lazy" decoding="async"></picture>
       </div>
       <div class="story-copy">
         <p class="eyebrow">ABOUT CARFUME</p>
